@@ -155,46 +155,57 @@ export default {
   </footer>
 </template>
 
-<style scoped>
-header {
-  text-align: center;
-  padding: 20px 0;
-}
+<style lang="scss" scoped>
+$mainBlue: #114674;
 
-header ul {
+@mixin base-ul-rules {
   list-style: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 0;
 }
 
-header ul li a {
+@mixin base-a-rules {
   text-decoration: none;
   color: black;
   display: inline-block;
-  padding: 10px;
-  font-weight: bold;
-  transition: all .2s ease-in-out;
 }
 
-header ul li a:hover,
-header ul li a.active {
-  background-color: #DAE9FE;
+header {
+  text-align: center;
+  padding: 20px 0;
+
+  ul {
+    @include base-ul-rules;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    li {
+      a {
+        @include base-a-rules;
+        padding: 10px;
+        font-weight: bold;
+        transition: all .2s ease-in-out;
+
+        &:hover, &.active {
+          background-color: #DAE9FE;
+        }
+      }
+    }
+  }
 }
 
 main {
   background-image: url('/img/fondo-pag-speciali.jpg');
   background-position: center;
   background-size: cover;
-}
 
-main .main-content {
-  text-align: center;
-  padding: 50px 0;
-  color: #114674;
-  font-weight: bold;
-  font-size: 1.5rem;
+  .main-content {
+    text-align: center;
+    padding: 50px 0;
+    color: $mainBlue;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
 }
 
 footer {
@@ -203,23 +214,22 @@ footer {
   background-position: bottom center;
   background-size: contain;
   background-repeat: no-repeat;
-}
 
-footer h4 {
-  text-transform: uppercase;
-  color: #114674;
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-}
+  h4 {
+    text-transform: uppercase;
+    color: $mainBlue;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
 
-footer ul {
-  list-style: none;
-  padding: 0;
-}
+  ul {
+    @include base-ul-rules;
 
-footer ul li a {
-  text-decoration: none;
-  color: black;
-  display: inline-block;
+    li {
+      a {
+        @include base-a-rules;
+      }
+    }
+  }
 }
 </style>
