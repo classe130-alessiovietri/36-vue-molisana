@@ -1,10 +1,10 @@
-@mixin base-ul-rules {
+@mixin simple-ul {
     list-style: none;
     padding: 0;
 }
 
-@mixin base-a-rules {
-    text-decoration: none;
-    color: black;
-    display: inline-block;
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

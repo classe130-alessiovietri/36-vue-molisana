@@ -1,63 +1,63 @@
 <script>
 export default {
-    data() {
-        return {
-            footerColumnTwoLinks: [
-                {
-                    label: "Il Pastificio",
-                    url: "#",
-                    active: false,
-                },
-                {
-                    label: "Grano",
-                    url: "#",
-                    active: false,
-                },
-                {
-                    label: "Filiera",
-                    url: "#",
-                    active: false,
-                },
-                {
-                    label: "100 anni di pasta",
-                    url: "#",
-                    active: false,
-                },
-                {
-                    label: "Sartoria della pasta",
-                    url: "#",
-                    active: false,
-                },
-            ],
-            footerColumnThreeLinks: [
-                {
-                    label: "Le Classiche",
-                    url: "#",
-                    active: false,
-                },
-                {
-                    label: "Le Integrali",
-                    url: "#",
-                    active: false,
-                },
-                {
-                    label: "Le Speciali",
-                    url: "#",
-                    active: false,
-                },
-                {
-                    label: "Le Biologiche",
-                    url: "#",
-                    active: false,
-                },
-                {
-                    label: "Le Gluten-Free",
-                    url: "#",
-                    active: false,
-                },
-            ],
-        };
-    },
+  data() {
+    return {
+      footerNavOne: [
+        {
+          label: 'Il Pastificio',
+          url: '#',
+          active: false
+        },
+        {
+          label: 'Grano',
+          url: '#',
+          active: false
+        },
+        {
+          label: 'Filiera',
+          url: '#',
+          active: false
+        },
+        {
+          label: '100 anni di pasta',
+          url: '#',
+          active: false
+        },
+        {
+          label: 'Sartoria della pasta',
+          url: '#',
+          active: false
+        },
+      ],
+      footerNavTwo: [
+        {
+          label: 'Le classiche',
+          url: '#',
+          active: false
+        },
+        {
+          label: 'Le integrali',
+          url: '#',
+          active: false
+        },
+        {
+          label: 'Le speciali',
+          url: '#',
+          active: false
+        },
+        {
+          label: 'Le biologiche',
+          url: '#',
+          active: false
+        },
+        {
+          label: 'Le Gluten-Free',
+          url: '#',
+          active: false
+        },
+      ],
+    };
+  },
 };
 </script>
 
@@ -70,39 +70,41 @@ export default {
                 </div>
                 <div class="col-1-3">
                     <h4>Pastificio</h4>
-                    <ul>
-                        <li
-                            v-for="(link, index) in footerColumnTwoLinks"
-                            :key="index"
-                        >
-                            <a
-                                :href="link.url"
-                                :class="{
-                                    active: link.active,
-                                }"
-                            >
-                                {{ link.label }}
-                            </a>
-                        </li>
-                    </ul>
+
+                    <nav>
+                        <ul>
+                            <li v-for="(link, i) in footerNavOne" :key="i">
+                                <!-- <a :href="link.url" :class="link.active ? 'active' : ''"> -->
+                                <a
+                                    :href="link.url"
+                                    :class="{
+                                        active: link.active,
+                                    }"
+                                >
+                                    {{ link.label }}
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
                 <div class="col-1-3">
                     <h4>Prodotti</h4>
-                    <ul>
-                        <li
-                            v-for="(link, index) in footerColumnThreeLinks"
-                            :key="index"
-                        >
-                            <a
-                                :href="link.url"
-                                :class="{
-                                    active: link.active,
-                                }"
-                            >
-                                {{ link.label }}
-                            </a>
-                        </li>
-                    </ul>
+
+                    <nav>
+                        <ul>
+                            <li v-for="(link, i) in footerNavTwo" :key="i">
+                                <!-- <a :href="link.url" :class="link.active ? 'active' : ''"> -->
+                                <a
+                                    :href="link.url"
+                                    :class="{
+                                        active: link.active,
+                                    }"
+                                >
+                                    {{ link.label }}
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>
@@ -110,31 +112,37 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use "../assets/scss/partials/variables" as *;
-@use "../assets/scss/partials/mixins" as *;
+@use '../assets/scss/partials/variables' as *;
+@use '../assets/scss/partials/mixins' as *;
 
 footer {
-  padding: 40px 0 200px 0;
+  padding: 40px 0 180px 0;
   background-image: url('/img/footer-montagne-bottom.jpg');
+  background-size: 100% auto;
   background-position: bottom center;
-  background-size: contain;
   background-repeat: no-repeat;
 
   h4 {
     text-transform: uppercase;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
     color: $mainBlue;
-    font-size: 1.2rem;
-    margin-bottom: 20px;
   }
 
   ul {
-    @include base-ul-rules;
+    @include simple-ul;
 
     li {
+
       a {
-        @include base-a-rules;
+        display: inline-block;
+        color: black;
+        text-decoration: none;
       }
+
     }
+
   }
+
 }
 </style>

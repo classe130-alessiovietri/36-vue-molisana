@@ -7,7 +7,7 @@ export default {
   components: {
     AppHeader,
     AppMain,
-    AppFooter
+    AppFooter,
   }
 }
 </script>
@@ -20,5 +20,6 @@ export default {
   <AppFooter />
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
+@use 'assets/scss/main' as *;
 </style>

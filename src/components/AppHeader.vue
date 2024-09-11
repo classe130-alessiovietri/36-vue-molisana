@@ -23,26 +23,30 @@ export default {
                     url: '#',
                     active: false
                 },
-            ],
+            ]
         };
     }
-}
+};
 </script>
 
 <template>
     <header>
         <div class="container">
             <div>
-                <img src="/img/la-molisana-logo.png" alt="La Molisana">
+                <img src="/img/la-molisana-logo.png" alt="La Molisana" />
             </div>
 
             <nav>
                 <ul>
-                    <li v-for="(link, index) in mainMenuLinks" :key="index">
-                        <a :href="link.url" :class="{
-                            'active': link.active
-                        }">
-                        {{ link.label }}
+                    <li v-for="(link, i) in mainMenuLinks" :key="i">
+                        <!-- <a :href="link.url" :class="link.active ? 'active' : ''"> -->
+                        <a
+                            :href="link.url"
+                            :class="{
+                                active: link.active,
+                            }"
+                        >
+                            {{ link.label }}
                         </a>
                     </li>
                 </ul>
@@ -59,23 +63,29 @@ header {
   padding: 20px 0;
 
   ul {
-    @include base-ul-rules;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include simple-ul;
+    @include flex-center;
 
     li {
+
       a {
-        @include base-a-rules;
+        display: inline-block;
+        margin: 0 5px;
         padding: 10px;
+        color: black;
+        text-decoration: none;
         font-weight: bold;
         transition: all .2s ease-in-out;
 
+        // header ul li a:hover, header ul li a.active {
         &:hover, &.active {
           background-color: #DAE9FE;
         }
       }
+
     }
+
   }
+
 }
 </style>
