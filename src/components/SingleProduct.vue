@@ -1,7 +1,8 @@
 <script>
 export default {
     props: {
-        product: Object
+        productTitle: String,
+        productImg: String
     }
 };
 </script>
@@ -9,10 +10,10 @@ export default {
 <template>
     <div class="product-item">
         <div>
-            <img :src="product.src" :alt="product.titolo">
+            <img :src="productImg" :alt="productTitle">
         </div>
         <h3>
-            {{ product.titolo }}
+            {{ productTitle }}
         </h3>
     </div>
 </template>

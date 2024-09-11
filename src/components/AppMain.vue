@@ -77,6 +77,16 @@ export default {
                     tipo: "cortissima",
                     cottura: 12,
                 },
+            ],
+            breads: [
+                {
+                    img: "https://www.lamolisana.it/wp-content/uploads/2021/04/1-spaghetto-quadrato.jpg",
+                    title: "N.4 Spaghetto Quadrato Bucato",
+                },
+                {
+                    img: "https://www.lamolisana.it/wp-content/uploads/2021/05/44-sedani.jpg",
+                    title: "N.44 Sedani",
+                },
             ]
         };
     },
@@ -98,18 +108,23 @@ export default {
                     <SingleProduct
                         v-for="(pasta, i) in pastas"
                         :key="i"
-                        :product="pasta" />
+                        :productTitle="pasta.titolo"
+                        :productImg="pasta.src" />
                 </div>
             </section>
 
             <section>
                 <h2>
-                    Prodotti in evidenza
+                    Pani
                 </h2>
 
-                <div class="pastas-container">
-                    <SingleProduct :product="pastas[2]" class="w-50" />
-                    <SingleProduct :product="pastas[4]" class="w-50" />
+                <div class="breads-container">
+                    <SingleProduct
+                        v-for="(bread, i) in breads"
+                        :key="i"
+                        :productTitle="bread.title"
+                        :productImg="bread.img"
+                        class="w-50" />
                 </div>
             </section>
         </div>
@@ -132,7 +147,8 @@ main {
         margin: 20px 0;
     }
 
-    .pastas-container {
+    .pastas-container,
+    .breads-container {
         background-color: white;
         display: flex;
         flex-wrap: wrap;
