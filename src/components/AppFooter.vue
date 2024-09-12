@@ -64,7 +64,7 @@ export default {
 <template>
     <footer>
         <div class="container">
-            <div class="row">
+            <div class="my-row">
                 <div class="col-1-3">
                     <img src="/img/la-molisana-logo.png" alt="La Molisana" />
                 </div>

@@ -99,6 +99,22 @@ export default {
 <template>
     <main>
         <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    Ciao
+                </div>
+                <div class="col-3">
+                    Ragazzi
+                </div>
+                <div class="col-3">
+                    Come
+                </div>
+                <div class="col-3">
+                    Va
+                </div>
+            </div>
+        </div>
+        <div class="container">
             <section>
                 <h1>
                     Lista Prodotti
