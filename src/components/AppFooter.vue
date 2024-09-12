@@ -112,9 +112,6 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use '../assets/scss/partials/variables' as *;
-@use '../assets/scss/partials/mixins' as *;
-
 footer {
   padding: 40px 0 180px 0;
   background-image: url('/img/footer-montagne-bottom.jpg');

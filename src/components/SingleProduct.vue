@@ -19,8 +19,6 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use "../assets/scss/partials/variables" as *;
-
 .product-item {
     border: 1px solid $mainBlue;
     width: 25%;

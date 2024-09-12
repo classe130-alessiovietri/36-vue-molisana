@@ -56,8 +56,6 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use '../assets/scss/partials/mixins' as *;
-
 header {
   text-align: center;
   padding: 20px 0;

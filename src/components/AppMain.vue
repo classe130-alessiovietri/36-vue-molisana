@@ -132,8 +132,6 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use "../assets/scss/partials/variables" as *;
-
 main {
     background-image: url("/img/fondo-pag-speciali.jpg");
     background-position: center;
